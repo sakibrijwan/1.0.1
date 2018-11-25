@@ -1,0 +1,29 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="testNG" verbose="1" >
+    <test name="LoginTest" >
+        <classes>
+            <class name="testcases.Config"></class>
+        </classes>
+    </test>
+    <test name="Login" >
+        <parameter name="browsers" value="firefox"></parameter>
+        <groups>
+            <define name="All">
+                <include name="functional"/>
+                <!--<include name="Scooter"/>-->
+            </define>
+            <run>
+                <include name="All"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="testcases.testFacebookLoginPage"></class>
+        </classes>
+    </test>
+    <!--<test name="Move Mouse to Rating">-->
+        <!--<classes>-->
+            <!--<class name="testcases.testFacebookPostPage"></class>-->
+        <!--</classes>-->
+    <!--</test>-->
+</suite>
